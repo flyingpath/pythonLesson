@@ -20,7 +20,6 @@ class InitialData():
         self.normal = self.normalizeBreak(text)
         self.breakArray = self.getbreakArray(self.normal)
         self.data = self.getUseData(self.normal)
-
 texture = """right breast cancer s/p simple mastectomy, sentinel LN biopsy and implantation of a tissue expander on 2016/08/11, s/p second stage breast reconstruction surgery on 2016-12-08
 a 225ml saline-filled prosthesis was implanted and filled up to 230ml
 

@@ -1,7 +1,7 @@
 #%%
 from datetime import datetime, timedelta
 
-A=datetime.now().strftime('%Y/%m/%d%H%M')
+A=datetime.now().strftime('%Y%m%d%H%M')
 print(A)
  #2017/11/012253
 #%%
@@ -12,4 +12,4 @@ print(A.strftime('%Y/%m/%d %H%M'))
 #%%
 A = A - timedelta(days =1)
 print((datetime.now() - timedelta(days = 1)).strftime('%Y/%m/%d %H%M'))
- #2017/10/31 2253
+ #2017/10/31 2253 

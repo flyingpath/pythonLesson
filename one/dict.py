@@ -3,7 +3,6 @@ sArray = {
   'animal': 'Cat',
   'id': 2
 }
-
 print(sArray['day'])
   #Wednessday
 
@@ -24,3 +23,4 @@ for eachKey in sArray:
   #Wednessday
   #Cat
   #004156
+  
