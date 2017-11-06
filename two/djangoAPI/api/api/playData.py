@@ -3,7 +3,7 @@ from .util import query as q
 def playData(par):
 
     try:
-        name = par['name'][0]
+        name = par['name']
     except:
         return {
             'status': False,
