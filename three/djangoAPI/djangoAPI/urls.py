@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 # 新增以下兩行 -------------------------------
 from graphene_django.views import GraphQLView
-from graphAPI import schema
+from graphAPI.schema import schema
 # -------------------------------------------
 
 urlpatterns = [

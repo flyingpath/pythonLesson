@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'api',
     #  'corsheaders',
 # 新增以下 -----------------------
-    'graphAPI'
+    'graphAPI',
     'graphene_django'
 #--------------------------------
 ]
