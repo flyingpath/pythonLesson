@@ -1,9 +1,13 @@
 import graphene
-#--------- 新增以下
 from collections import namedtuple 
+
 from .schemaClass.playDataSchema import playDataSchema 
+#---- 新增以下 ----------------------
+from .mutations.writePlayData import writePlayData as writePlayDataMutation
+#-----------------------------------
+
 from api.api.playData import playData
-#---------
+from api.api.writePlayData import writePlayData
 
 class Query(graphene.ObjectType):
     reverse = graphene.String(word=graphene.String(default_value='t'))
@@ -12,8 +16,8 @@ class Query(graphene.ObjectType):
         print(self)
         return 'hello'
 
-#--------- 新增以下 ------------------------
     playData = graphene.List(playDataSchema, name = graphene.String())
+    # playData = graphene.NonNull(playDataSchema, name = graphene.String())
 
     def resolve_playData(self, info, name):
         data = playData( {'name': name} )['data']
@@ -25,7 +29,13 @@ class Query(graphene.ObjectType):
             return outData
         else: 
             return []
-#-------------------------------------------
 
+#---- 新增以下 ----------------------
 
-schema = graphene.Schema(query=Query)
+class Mutation(graphene.ObjectType):
+    writePlayData = writePlayDataMutation.Field()
+    def resolve_writePlayData(self, info):
+        return writePlayDataMutation
+        
+#------------------------------------
+schema = graphene.Schema(query=Query, mutation=Mutation)
